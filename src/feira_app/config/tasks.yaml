@@ -1,0 +1,36 @@
+# Configuração das tarefas para o aplicativo de feira
+pesquisa_feiras:
+  description: >
+    Pesquisar as principais feiras de {tipo_feira} que ocorrerão nos próximos 12 meses.
+    Identifique as datas, locais, organizadores, tamanho do evento (número estimado de expositores e visitantes),
+    e principais expositores confirmados. Foque nas feiras mais relevantes para o mercado {regiao}.
+  expected_output: >
+    Uma lista detalhada com pelo menos 5 feiras importantes de {tipo_feira}, contendo para cada uma:
+    nome, data, local, organizador, tamanho estimado, principais expositores e relevância para o mercado.
+  agent: pesquisador_feira
+
+analise_mercado:
+  description: >
+    Analisar o mercado de {tipo_feira} na região {regiao}, identificando tendências atuais,
+    oportunidades de negócio, principais competidores e suas estratégias de participação em feiras.
+    Considere o contexto econômico atual e as projeções para os próximos 12 meses.
+  expected_output: >
+    Um relatório de análise de mercado com seções sobre: tendências atuais do setor,
+    oportunidades identificadas, análise de competidores, e recomendações iniciais
+    para abordagem em feiras. O relatório deve ser estruturado e conter dados quantitativos
+    quando disponíveis.
+  agent: analista_mercado
+
+plano_estrategico:
+  description: >
+    Com base nas pesquisas de feiras e análise de mercado, desenvolva um plano estratégico
+    detalhado para participação em feiras de {tipo_feira}. O plano deve incluir: seleção das
+    feiras mais adequadas, objetivos específicos para cada feira, estratégias de apresentação,
+    orçamento estimado, equipe necessária, métricas de sucesso e cronograma de preparação.
+  expected_output: >
+    Um plano estratégico completo em formato de relatório com as seguintes seções:
+    resumo executivo, seleção de feiras com justificativa, objetivos específicos,
+    estratégias de apresentação e marketing, orçamento detalhado, necessidades de equipe,
+    métricas de avaliação de sucesso e cronograma de implementação.
+  agent: planejador_estrategico
+  output_file: output/plano_estrategico_{tipo_feira}.md
